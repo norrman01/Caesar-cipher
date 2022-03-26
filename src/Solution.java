@@ -28,13 +28,16 @@ public class Solution {
 
     public static void main(String[] args) {
         /**
-         * предлагаем на выбор два режима
+         * предлагаем на выбор три режима
          */
         System.out.println("Введите 1 для шифрования текста из файла. Введите 2 для режима BruteForce. Введите 3 для статистического анализа");
         Scanner console = new Scanner(System.in);
 
         while (true) {
             int f = console.nextInt();
+            /**
+             * при выборе цифры 2, запускается режим Брутфорс
+             */
             if (f == 2) {
                 System.out.println(BruteForce.isBruteForce());
                 return;
@@ -44,6 +47,9 @@ public class Solution {
                  * Зашифровываем путём вызова метода isChiffre из класса Caesar
                  */
                 System.out.println(Caesar.isChiffre());
+                /**
+                 * здесь происходит запись зашифрованного текста. Который далее будет использоваться в BruteForce и Static
+                 */
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\javarush\\final.txt"))) {
                     writer.write(txt);
                     writer.flush();
@@ -57,13 +63,19 @@ public class Solution {
                  */
                 System.out.println(Decoding.isDecoding(key, txt));
                 return;
+                /**
+                 * при нажатии 3, запускается режим анализа. В начале метод isStatic считывает новый файл и изучает самый популярный символ (которым оказался пробел)
+                 * после этого запускается повторно, но уже анализируем так же наш зашифрованный текст. Там так же находим самый популярный символ (буква Д, которая прежде была пробелом)
+                 * мы отнимаем разницу двух индексов из общего числа символов. Получаем ключ. После запускаем саут в котором вызываем метод расшифровки, и нашим получившимся ключом, расшифровываем и
+                 * выводим на экран.
+                 */
             } else if (f == 3) {
                 int index1 = Static.isStatic(isReader(stat));
                 int index2 = Static.isStatic(isReader(BruteForce.brute));
                 int reskey = 72 - (index1 - index2);
                 System.out.println(Decoding.isDecoding(reskey, isReader(BruteForce.brute)));
             } else {
-                System.out.println("Введите 1 для шифрования текста из файла. Или введите 2 для режима BruteForce");
+                System.out.println("Введите 1 для шифрования текста из файла. Введите 2 для режима BruteForce. Введите 3 для статистического анализа");
             }
         }
     }
