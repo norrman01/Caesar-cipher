@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Solution {
     public static char[] txt;
     static int key = 10;
-    static char[] alphavite= new char[]{'А', 'а', 'Б', 'б', 'В', 'в', 'Г', 'г', 'Д', 'д', 'Е', 'е', 'Ё', 'ё', 'Ж',
+    static char[] alphavite = new char[]{'А', 'а', 'Б', 'б', 'В', 'в', 'Г', 'г', 'Д', 'д', 'Е', 'е', 'Ё', 'ё', 'Ж',
             'ж', 'З', 'з', 'И', 'и', 'Й', 'й', 'К', 'к', 'Л', 'л', 'М', 'м', 'Н', 'н', 'О', 'о', 'П', 'п',
             'Р', 'р', 'С', 'с', 'Т', 'т', 'У', 'у', 'Ф', 'ф', 'Х', 'х', 'Ц', 'ц', 'Ч', 'ч', 'Ш', 'ш', 'Щ',
             'щ', 'ъ', 'Ы', 'ы', 'ь', 'Э', 'э', 'Ю', 'ю', 'Я', 'я', '.', ',', '"', ':', '-', '?', '!', ' '};
     public static String caesar = "C:\\javarush\\новый.txt";
 
-    public static char[] isReader(String caesar){
+    public static char[] isReader(String caesar) {
         try (FileReader in = new FileReader(caesar);
              BufferedReader reader = new BufferedReader(in)) {
             while (reader.ready()) {
@@ -56,6 +56,8 @@ public class Solution {
                  */
                 System.out.println(Decoding.isDecoding());
                 return;
+            } else if (f == 3) {
+                Static.isStatic();
             } else {
                 System.out.println("Введите 1 для шифрования текста из файла. Или введите 2 для режима BruteForce");
             }

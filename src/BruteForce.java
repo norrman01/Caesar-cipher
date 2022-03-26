@@ -2,20 +2,20 @@ import java.io.*;
 import java.util.Scanner;
 
 public class BruteForce {
-    static int key = -3;
+    static int key = -10;
     /**
      * создаю резервный массив чаров, с аналогичным размером как у txt
      */
-    public static char[] txt2 = new char[54];
+    public static char[] txt2 = new char[Solution.isReader(Solution.caesar).length];
+
     public static char[] isBruteForce() {
         String brute = "C:\\javarush\\final.txt";
         /**
          * метод ридер, принимаем файл уже закодированный
          */
-       Solution.isReader(brute);
+        Solution.isReader(brute);
 
-
-        for (int j = 0; j < 54 ; j++) {
+        for (int j = 0; j < txt2.length; j++) {
             for (int i = 0; i < Solution.txt.length; i++) {
                 int index = 0;
                 while (Solution.txt[i] != Solution.alphavite[index]) index++;
@@ -26,17 +26,20 @@ public class BruteForce {
                 if (index < 0) {
                     index += 72;
                 }
+                if (index >71){
+                    index -= 72;
+                }
                 txt2[i] = Solution.alphavite[index];
             }
-
             String prob = new String(txt2);
+            String[] array = prob.split(" ");
             System.out.println(prob);
-            if (prob.equalsIgnoreCase("Да! Теперь решено без возврата. Я покинул Родные края.")) {
-                System.out.println("есть совпадение!");
-                return txt2;
-            } else {
-                key++;
-            }
+            for (int i = 0; i < array.length; i++) {
+                if (array[i].equals("шифрование")){
+                    System.out.println("есть совпадение!");
+                    return txt2;
+                }
+            } key++;
         }
         return txt2;
     }
