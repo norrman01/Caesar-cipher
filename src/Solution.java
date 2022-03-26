@@ -34,7 +34,7 @@ public class Solution {
         int f = console.nextInt();
         if (f == 2) {
             System.out.println(BruteForce.isBruteForce());
-        } else {
+        } else if (f==1) {
 
             /**
              * Зашифровываем путём вызова метода isChiffre из класса Caesar
@@ -52,8 +52,10 @@ public class Solution {
              * А теперь всё обратно расшифровываем
              */
             System.out.println(Decoding.isDecoding());
-
-
+        }
+        else {
+            System.out.println("Введите 1 для шифрования текста из файла. Или введите 2 для режима BruteForce");
+            //TODO необходимо дописать возврат на консоль
         }
     }
 }

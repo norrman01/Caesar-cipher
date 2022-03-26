@@ -14,7 +14,6 @@ public class Decoding {
                 index += 72;
             }
             Solution.txt[i] = Solution.alphavite[index];
-
         }
         String prob = new String(Solution.txt);
         if (prob.equals("Да! Теперь решено без возврата. Я покинул Родные края.")) {

@@ -3,6 +3,10 @@ import java.util.HashSet;
 class Caesar  {
 
     public static char[] isChiffre() {
+        /**
+         * Вызываю метод ридер, который принимает текстовый файл и считывает его.
+         * дальше путем цикла перебираем чары.
+         */
         Solution.isReader(Solution.caesar);
         for (int i = 0; i < Solution.txt.length; i++) {
             int index = 0;
