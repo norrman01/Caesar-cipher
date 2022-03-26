@@ -2,30 +2,42 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Static {
-    /**
-     * сюда входит статик.txt методом ридер
-     * с помощью циклов перебираем чары и составляем map из символов и колва вхождений.
-     */
-    static String stat = "C:\\javarush\\stat.txt";
-    public static char[] isStat = Solution.isReader(stat);
-    public static char [] isStatic (){
-       Map<Character, Integer> map = new HashMap<>();
 
-        for (int i = 1; i < isStat.length; i++) {
-            if (map.get(isStat[i]) == null){
-                map.put(isStat[i], 1 );
-            }
-            else
-            map.put(isStat[i], map.get(isStat[i])+1 );
+    public static int isStatic(char[] name) {
+        Map<Character, Integer> map = new HashMap<>();
+        int count = 0;
+        for (int i = 1; i < name.length; i++) {
+            if (map.get(name[i]) == null) {
+                map.put(name[i], 1);
+                count++;
+            } else
+                map.put(name[i], map.get(name[i]) + 1);
+            count++;
         }
-        for (Character key: map.keySet()){
+        int maxvalue = 0;
+        char maxkey = 0;
+        for (Character key : map.keySet()) {
             Integer value = map.get(key);
+            if (value > maxvalue) {
+                maxvalue = value;
+                maxkey = key;
+            }
             System.out.println(key + " --> " + value);
-
         }
+        System.out.println("символ \"" + maxkey +  "\" " + maxvalue + " повторения, из кол-ва символов " + count);
 
+//        double maxproc = (double) maxvalue / count;
+//        System.out.println(maxproc);
+        int index = 0;
+        for (int i = 0; i < Solution.alphavite.length; i++) {
+            if (maxkey == Solution.alphavite[i]) {
+                index = i;
+            }
+        }
+//        int reskey = 72 - (71 - index);
+//        System.out.println(reskey);
 
-return isStat;
+        return index;
     }
 }
 

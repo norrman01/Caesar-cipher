@@ -7,9 +7,10 @@ public class BruteForce {
      * создаю резервный массив чаров, с аналогичным размером как у txt
      */
     public static char[] txt2 = new char[Solution.isReader(Solution.caesar).length];
+    public static String brute = "C:\\javarush\\final.txt";
 
     public static char[] isBruteForce() {
-        String brute = "C:\\javarush\\final.txt";
+
         /**
          * метод ридер, принимаем файл уже закодированный
          */
@@ -26,7 +27,7 @@ public class BruteForce {
                 if (index < 0) {
                     index += 72;
                 }
-                if (index >71){
+                if (index > 71) {
                     index -= 72;
                 }
                 txt2[i] = Solution.alphavite[index];
@@ -35,11 +36,12 @@ public class BruteForce {
             String[] array = prob.split(" ");
             System.out.println(prob);
             for (int i = 0; i < array.length; i++) {
-                if (array[i].equals("шифрование")){
+                if (array[i].equals("шифрование")) {
                     System.out.println("есть совпадение!");
                     return txt2;
                 }
-            } key++;
+            }
+            key++;
         }
         return txt2;
     }
