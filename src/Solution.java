@@ -33,14 +33,14 @@ public class Solution {
         System.out.println("Введите 1 для шифрования текста из файла. Введите 2 для режима BruteForce. Введите 3 для статистического анализа");
         Scanner console = new Scanner(System.in);
         while (true) {
-            int f = console.nextInt();
+            int button = console.nextInt();
             /**
              * при выборе цифры 2, запускается режим Брутфорс
              */
-            if (f == 2) {
+            if (button == 2) {
                 System.out.println(BruteForce.isBruteForce());
                 return;
-            } else if (f == 1) {
+            } else if (button == 1) {
                 /**
                  * Зашифровываем путём вызова метода isChiffre из класса Caesar
                  */
@@ -66,11 +66,11 @@ public class Solution {
                  * мы отнимаем разницу двух индексов из общего числа символов. Получаем ключ. После запускаем саут в котором вызываем метод расшифровки, и нашим получившимся ключом, расшифровываем и
                  * выводим на экран.
                  */
-            } else if (f == 3) {
-                int index1 = Static.isStatic(isReader(stat));
-                int index2 = Static.isStatic(isReader(BruteForce.brute));
-                int reskey = 72 - (index1 - index2);
-                System.out.println(Decoding.isDecoding(reskey, isReader(BruteForce.brute)));
+            } else if (button == 3) {
+                int indexStat = Static.isStatic(isReader(stat));
+                int indexBrute = Static.isStatic(isReader(BruteForce.brute));
+                int statkey = 72 - (indexStat - indexBrute);
+                System.out.println(Decoding.isDecoding(statkey, isReader(BruteForce.brute)));
             } else {
                 System.out.println("Введите 1 для шифрования текста из файла. Введите 2 для режима BruteForce. Введите 3 для статистического анализа");
             }
