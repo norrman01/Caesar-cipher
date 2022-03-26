@@ -15,8 +15,6 @@ public class Decoding {
             }
             txt[i] = Solution.alphavite[index];
         }
-
-
         return txt;
     }
 }

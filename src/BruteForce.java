@@ -34,7 +34,6 @@ public class BruteForce {
             }
             String prob = new String(txt2);
             String[] array = prob.split(" ");
-            System.out.println(prob);
             for (int i = 0; i < array.length; i++) {
                 if (array[i].equals("шифрование")) {
                     System.out.println("есть совпадение!");

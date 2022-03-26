@@ -1,6 +1,8 @@
+import javax.swing.*;
 import java.io.*;
 import java.nio.file.DirectoryStream;
 import java.util.Scanner;
+import javax.swing.*;
 
 public class Solution {
     public static char[] txt;
@@ -11,7 +13,6 @@ public class Solution {
             'Р', 'р', 'С', 'с', 'Т', 'т', 'У', 'у', 'Ф', 'ф', 'Х', 'х', 'Ц', 'ц', 'Ч', 'ч', 'Ш', 'ш', 'Щ',
             'щ', 'ъ', 'Ы', 'ы', 'ь', 'Э', 'э', 'Ю', 'ю', 'Я', 'я', '.', ',', '"', ':', '-', '?', '!', ' '};
     public static String caesar = "C:\\javarush\\новый.txt";
-
     public static char[] isReader(String caesar) {
         try (FileReader in = new FileReader(caesar);
              BufferedReader reader = new BufferedReader(in)) {
@@ -25,14 +26,12 @@ public class Solution {
         }
         return txt;
     }
-
-    public static void main(String[] args) {
+    public static  void main(String[] args) {
         /**
          * предлагаем на выбор три режима
          */
         System.out.println("Введите 1 для шифрования текста из файла. Введите 2 для режима BruteForce. Введите 3 для статистического анализа");
         Scanner console = new Scanner(System.in);
-
         while (true) {
             int f = console.nextInt();
             /**
@@ -42,11 +41,10 @@ public class Solution {
                 System.out.println(BruteForce.isBruteForce());
                 return;
             } else if (f == 1) {
-
                 /**
                  * Зашифровываем путём вызова метода isChiffre из класса Caesar
                  */
-                System.out.println(Caesar.isChiffre());
+                System.out.println(Caesar.isChiffre(key, txt));
                 /**
                  * здесь происходит запись зашифрованного текста. Который далее будет использоваться в BruteForce и Static
                  */
@@ -57,7 +55,6 @@ public class Solution {
                     System.out.println(e.getMessage());
                 }
                 System.out.println("запись зашифрованного текста прошла успешно");
-
                 /**
                  * А теперь всё обратно расшифровываем
                  */

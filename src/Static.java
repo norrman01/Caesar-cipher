@@ -24,18 +24,14 @@ public class Static {
             }
             System.out.println(key + " --> " + value);
         }
-        System.out.println("символ \"" + maxkey +  "\" " + maxvalue + " повторения, из кол-ва символов " + count);
+        System.out.println("символ \"" + maxkey + "\" " + maxvalue + " повторений, из кол-ва символов- " + count);
 
-//        double maxproc = (double) maxvalue / count;
-//        System.out.println(maxproc);
         int index = 0;
         for (int i = 0; i < Solution.alphavite.length; i++) {
             if (maxkey == Solution.alphavite[i]) {
                 index = i;
             }
         }
-//        int reskey = 72 - (71 - index);
-//        System.out.println(reskey);
 
         return index;
     }
