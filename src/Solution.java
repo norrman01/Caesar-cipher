@@ -31,31 +31,34 @@ public class Solution {
          */
         System.out.println("Введите 1 для шифрования текста из файла. Или введите 2 для режима BruteForce");
         Scanner console = new Scanner(System.in);
-        int f = console.nextInt();
-        if (f == 2) {
-            System.out.println(BruteForce.isBruteForce());
-        } else if (f==1) {
 
-            /**
-             * Зашифровываем путём вызова метода isChiffre из класса Caesar
-             */
-            System.out.println(Caesar.isChiffre());
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\javarush\\final.txt"))) {
-                writer.write(txt);
-                writer.flush();
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+        while (true) {
+            int f = console.nextInt();
+            if (f == 2) {
+                System.out.println(BruteForce.isBruteForce());
+                return;
+            } else if (f == 1) {
+
+                /**
+                 * Зашифровываем путём вызова метода isChiffre из класса Caesar
+                 */
+                System.out.println(Caesar.isChiffre());
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\javarush\\final.txt"))) {
+                    writer.write(txt);
+                    writer.flush();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+                System.out.println("запись зашифрованного текста прошла успешно");
+
+                /**
+                 * А теперь всё обратно расшифровываем
+                 */
+                System.out.println(Decoding.isDecoding());
+                return;
+            } else {
+                System.out.println("Введите 1 для шифрования текста из файла. Или введите 2 для режима BruteForce");
             }
-            System.out.println("запись зашифрованного текста прошла успешно");
-
-            /**
-             * А теперь всё обратно расшифровываем
-             */
-            System.out.println(Decoding.isDecoding());
-        }
-        else {
-            System.out.println("Введите 1 для шифрования текста из файла. Или введите 2 для режима BruteForce");
-            //TODO необходимо дописать возврат на консоль
         }
     }
 }
