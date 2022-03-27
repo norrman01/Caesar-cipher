@@ -44,7 +44,7 @@ public class Solution {
                 /**
                  * Зашифровываем путём вызова метода isChiffre из класса Caesar
                  */
-                System.out.println(Caesar.isChiffre(key, txt));
+                System.out.println(Caesar.isChiffre());
                 /**
                  * здесь происходит запись зашифрованного текста. Который далее будет использоваться в BruteForce и Static
                  */

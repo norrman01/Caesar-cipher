@@ -33,6 +33,7 @@ public class BruteForce {
                 txt2[i] = Solution.alphavite[index];
             }
             String prob = new String(txt2);
+            System.out.println(prob);
             String[] array = prob.split(" ");
             for (int i = 0; i < array.length; i++) {
                 if (array[i].equals("шифрование")) {
