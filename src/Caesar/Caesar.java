@@ -7,24 +7,24 @@ class Caesar  {
          * Вызываю метод ридер, который принимает текстовый файл и считывает его.
          * дальше путем цикла перебираем чары.
          */
-        Solution.isReader(Solution.caesar);
-        for (int i = 0; i < Solution.txt.length; i++) {
+        Utils.isReader(Utils.caesar);
+        for (int i = 0; i < Utils.txt.length; i++) {
             int index = 0;
             try {
-                while (Solution.txt[i] != Solution.alphavite[index]) index++;
+                while (Utils.txt[i] != Utils.alphabet[index]) index++;
             } catch (ArrayIndexOutOfBoundsException e) {
                 index = 71;
             }
             /**
              * Добавляю ключ +10, и меняю индекс. Если перевалило за 71, то отсчет с 0.
              */
-            index += Solution.key;
+            index += Utils.key;
             if (index > 71) {
                 index -= 72;
             }
-            Solution.txt[i] = Solution.alphavite[index];
+           Utils.txt[i] = Utils.alphabet[index];
         }
-        return Solution.txt;
+        return Utils.txt;
     }
 }
 

@@ -5,20 +5,19 @@ public class BruteForce {
     /**
      * создаю резервный массив чаров, с аналогичным размером как у txt
      */
-    public static char[] txt2 = new char[Solution.isReader(Solution.caesar).length];
-    public static String brute = "C:\\javarush\\final.txt";
+
 
     public static char[] isBruteForce() {
 
         /**
          * метод ридер, принимаем файл уже закодированный
          */
-        Solution.isReader(brute);
+       Utils.isReader(Utils.brute);
 
-        for (int j = 0; j < txt2.length; j++) {
-            for (int i = 0; i < Solution.txt.length; i++) {
+        for (int j = 0; j < Utils.txt2.length; j++) {
+            for (int i = 0; i < Utils.txt.length; i++) {
                 int index = 0;
-                while (Solution.txt[i] != Solution.alphavite[index]) index++;
+                while (Utils.txt[i] != Utils.alphabet[index]) index++;
                 /**
                  * Отнимаю от индекса наш ключ. на каждом круге цикла меняем ключ на +1. Если меньше 0, то + 72 символ, если перевалили за 71, отнимаем 72
                  */
@@ -29,20 +28,20 @@ public class BruteForce {
                 if (index > 71) {
                     index -= 72;
                 }
-                txt2[i] = Solution.alphavite[index];
+                Utils.txt2[i] = Utils.alphabet[index];
             }
-            String prob = new String(txt2);
+            String prob = new String(Utils.txt2);
             System.out.println(prob);
             String[] array = prob.split(" ");
             for (int i = 0; i < array.length; i++) {
                 if (array[i].equals("шифрование")) {
                     System.out.println("есть совпадение!");
-                    return txt2;
+                    return Utils.txt2;
                 }
             }
             key++;
         }
-        return txt2;
+        return Utils.txt2;
     }
 }
 

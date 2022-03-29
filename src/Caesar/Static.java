@@ -39,8 +39,8 @@ public class Static {
         /**
          * здесь мы перебираем наш алфавит и ищем индекс нашего самого популярного символа, и возвращаем его.
          */
-        for (int i = 0; i < Solution.alphavite.length; i++) {
-            if (maxkey == Solution.alphavite[i]) {
+        for (int i = 0; i < Utils.alphabet.length; i++) {
+            if (maxkey == Utils.alphabet[i]) {
                 index = i;
             }
         }
