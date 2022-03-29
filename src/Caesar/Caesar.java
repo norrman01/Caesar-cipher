@@ -2,7 +2,7 @@ package Caesar;
 
 class Caesar  {
 
-    public static char[] isChiffre() {
+    public static char[] isCipher() {
         /**
          * Вызываю метод ридер, который принимает текстовый файл и считывает его.
          * дальше путем цикла перебираем чары.

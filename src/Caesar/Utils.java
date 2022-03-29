@@ -13,14 +13,13 @@ public class Utils {
             'Р', 'р', 'С', 'с', 'Т', 'т', 'У', 'у', 'Ф', 'ф', 'Х', 'х', 'Ц', 'ц', 'Ч', 'ч', 'Ш', 'ш', 'Щ',
             'щ', 'ъ', 'Ы', 'ы', 'ь', 'Э', 'э', 'Ю', 'ю', 'Я', 'я', '.', ',', '"', ':', '-', '?', '!', ' '};
     public static String caesar = "src/Caesar/новый.txt";
-    public static char[] txt2 = new char[isReader(caesar).length];
+    public static char[] textForBrute = new char[isReader(caesar).length];
     public static String brute = "final.txt";
     public static char[] isReader(String caesar) {
         try (FileReader in = new FileReader(caesar);
              BufferedReader reader = new BufferedReader(in)) {
             while (reader.ready()) {
                 String text = reader.readLine();
-
                 txt = text.toCharArray();
             }
         } catch (IOException e) {

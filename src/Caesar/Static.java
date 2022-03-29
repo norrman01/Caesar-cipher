@@ -34,7 +34,6 @@ public class Static {
             System.out.println(key + " --> " + value);
         }
         System.out.println("символ \"" + maxkey + "\" " + maxvalue + " повторений, из кол-ва символов- " + count);
-
         int index = 0;
         /**
          * здесь мы перебираем наш алфавит и ищем индекс нашего самого популярного символа, и возвращаем его.
@@ -44,7 +43,6 @@ public class Static {
                 index = i;
             }
         }
-
         return index;
     }
 }
