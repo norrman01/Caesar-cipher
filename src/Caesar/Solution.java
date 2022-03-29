@@ -3,7 +3,6 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Solution {
-
     public static void main(String[] args) {
         /*
           предлагаем на выбор три режима

@@ -1,5 +1,6 @@
 package Caesar;
 
+
 public class BruteForce {
     static int keyForBrute = -10;
     /*

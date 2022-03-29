@@ -1,7 +1,6 @@
 package Caesar;
 
 public class Decoding {
-
     public static char[] isDecoding(int key, char[] txt) {
         for (int i = 0; i < txt.length; i++) {
             int index = 0;

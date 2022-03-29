@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+
 public class Utils {
     public static char[] baseText;
     static String textForStatic = "src/Caesar/stat.txt";
