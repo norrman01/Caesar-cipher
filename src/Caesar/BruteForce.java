@@ -1,5 +1,4 @@
-import java.io.*;
-import java.util.Scanner;
+package Caesar;
 
 public class BruteForce {
     static int key = -10;

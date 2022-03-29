@@ -1,8 +1,7 @@
-import javax.swing.*;
+package Caesar;
+
 import java.io.*;
-import java.nio.file.DirectoryStream;
 import java.util.Scanner;
-import javax.swing.*;
 
 public class Solution {
     public static char[] txt;
@@ -12,7 +11,7 @@ public class Solution {
             'ж', 'З', 'з', 'И', 'и', 'Й', 'й', 'К', 'к', 'Л', 'л', 'М', 'м', 'Н', 'н', 'О', 'о', 'П', 'п',
             'Р', 'р', 'С', 'с', 'Т', 'т', 'У', 'у', 'Ф', 'ф', 'Х', 'х', 'Ц', 'ц', 'Ч', 'ч', 'Ш', 'ш', 'Щ',
             'щ', 'ъ', 'Ы', 'ы', 'ь', 'Э', 'э', 'Ю', 'ю', 'Я', 'я', '.', ',', '"', ':', '-', '?', '!', ' '};
-    public static String caesar = "C:\\javarush\\новый.txt";
+    public static String caesar = "новый.txt";
     public static char[] isReader(String caesar) {
         try (FileReader in = new FileReader(caesar);
              BufferedReader reader = new BufferedReader(in)) {
