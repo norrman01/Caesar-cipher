@@ -3,9 +3,6 @@ package Caesar;
 
 public class BruteForce {
     static int keyForBrute = -10;
-    /*
-      создаю резервный массив чаров, с аналогичным размером как у baseText
-     */
     public static char[] isBruteForce() {
         /*
           метод ридер, принимаем файл уже закодированный
