@@ -2,20 +2,20 @@ package Caesar;
 
 public class BruteForce {
     static int keyForBrute = -10;
-    /**
-     * создаю резервный массив чаров, с аналогичным размером как у txt
+    /*
+      создаю резервный массив чаров, с аналогичным размером как у baseText
      */
     public static char[] isBruteForce() {
-        /**
-         * метод ридер, принимаем файл уже закодированный
+        /*
+          метод ридер, принимаем файл уже закодированный
          */
        Utils.isReader(Utils.brute);
         for (int j = 0; j < Utils.textForBrute.length; j++) {
-            for (int i = 0; i < Utils.txt.length; i++) {
+            for (int i = 0; i < Utils.baseText.length; i++) {
                 int index = 0;
-                while (Utils.txt[i] != Utils.alphabet[index]) index++;
-                /**
-                 * Отнимаю от индекса наш ключ. на каждом круге цикла меняем ключ на +1. Если меньше 0, то + 72 символ, если перевалили за 71, отнимаем 72
+                while (Utils.baseText[i] != Utils.alphabet[index]) index++;
+                /*
+                  Отнимаю от индекса наш ключ. на каждом круге цикла меняем ключ на +1. Если меньше 0, то + 72 символ, если перевалили за 71, отнимаем 72
                  */
                 index -= keyForBrute;
                 if (index < 0) {
