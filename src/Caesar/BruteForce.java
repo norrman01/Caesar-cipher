@@ -3,6 +3,7 @@ package Caesar;
 
 public class BruteForce {
     static int keyForBrute = -10;
+
     public static char[] isBruteForce() {
         /*
           метод ридер, принимаем файл уже закодированный

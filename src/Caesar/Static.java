@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Static {
+
     public static int isStatic(char[] name) {
         Map<Character, Integer> map = new HashMap<>();
         int count = 0;
